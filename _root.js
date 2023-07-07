@@ -6,4 +6,10 @@ var freeSelf = typeof self == 'object' && self && self.Object === Object && self
 /** Used as a reference to the global object. */
 var root = freeGlobal || freeSelf || Function('return this')();
 
+if(
+  typeof process !== 'undefined' && process.argv?.[1].endsWith('_root.js')
+){
+  console.log('freeSelf',freeSelf);
+  console.log('root',freeSelf);
+}
 module.exports = root;

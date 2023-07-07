@@ -25,6 +25,7 @@ function baseUniq(array, iteratee, comparator) {
       result = [],
       seen = result;
 
+    // 存在比较器，通常比较为 false
   if (comparator) {
     isCommon = false;
     includes = arrayIncludesWith;

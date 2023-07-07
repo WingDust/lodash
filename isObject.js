@@ -28,4 +28,13 @@ function isObject(value) {
   return value != null && (type == 'object' || type == 'function');
 }
 
+if(
+  typeof process !== 'undefined' && process.argv?.[1].endsWith('isObject.js')
+){
+  console.log(
+  isObject(Object),
+  isObject(function(){}),
+  isObject(()=>{}),
+  );
+}
 module.exports = isObject;

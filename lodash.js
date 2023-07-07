@@ -135,6 +135,14 @@
       reUnescapedHtml = /[&<>"']/g,
       reHasEscapedHtml = RegExp(reEscapedHtml.source),
       reHasUnescapedHtml = RegExp(reUnescapedHtml.source);
+if(
+  typeof process !== 'undefined' && process.argv?.[1].endsWith('lodash.js')
+){
+  console.log(
+  reEscapedHtml.test('<html><html/>'),
+  reUnescapedHtml.test('<html><html/>'),
+  );
+}
 
   /** Used to match template delimiters. */
   var reEscape = /<%-([\s\S]+?)%>/g,

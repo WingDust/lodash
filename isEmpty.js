@@ -51,9 +51,11 @@ var hasOwnProperty = objectProto.hasOwnProperty;
  * // => false
  */
 function isEmpty(value) {
+  // null 返回 true
   if (value == null) {
     return true;
   }
+  // 当为类数组时，
   if (isArrayLike(value) &&
       (isArray(value) || typeof value == 'string' || typeof value.splice == 'function' ||
         isBuffer(value) || isTypedArray(value) || isArguments(value))) {
@@ -63,6 +65,7 @@ function isEmpty(value) {
   if (tag == mapTag || tag == setTag) {
     return !value.size;
   }
+  // 检查是否是原型对象 也就是 prototype 
   if (isPrototype(value)) {
     return !baseKeys(value).length;
   }

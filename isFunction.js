@@ -34,4 +34,15 @@ function isFunction(value) {
   return tag == funcTag || tag == genTag || tag == asyncTag || tag == proxyTag;
 }
 
+
+if(
+  typeof process !== 'undefined' && process.argv?.[1].endsWith('isFunction.js')
+){
+  console.log(
+  isFunction(Object),
+  isFunction(function(){}),
+  isFunction(()=>{}),
+  );
+}
+
 module.exports = isFunction;

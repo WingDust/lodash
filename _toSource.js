@@ -6,7 +6,7 @@ var funcToString = funcProto.toString;
 
 /**
  * Converts `func` to its source code.
- *
+ * 用来将运行中的函数转化成代码字符串
  * @private
  * @param {Function} func The function to convert.
  * @returns {string} Returns the source code.
